@@ -4,6 +4,13 @@ const odd = document.getElementById('odd');
 const userNumberElement = document.getElementById('user-number');
 const button = document.getElementById('button');
 
+
+// prendo la value dal dom conl'event listener
+button.addEventListener('click' , function(){
+    userNumberValue = userNumberElement.value.trim();
+    console.log(userNumberValue);
+})
+
 // creare una function per vedere se un numero è pari o dispari
 // faccio scegliere all'utente se vuole pari o dispari
 // genero un numero casuale da 1 a 5 (funzione)
