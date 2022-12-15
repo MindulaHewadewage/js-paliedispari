@@ -1,8 +1,7 @@
 // Metto gli elementi dal dom
-const even = document.getElementById('even');
-const odd = document.getElementById('odd');
 const userNumberElement = document.getElementById('user-number');
 const button = document.getElementById('button');
+const oddOrEvenElement = document.getElementById('odd-or-even');
 
 
 // genero un numero casuale da 1 a 5 (funzione)
@@ -10,20 +9,32 @@ function getRandomNumber(min = 1 , max = 5){
     const randomNumber = Math.floor(Math.random()*max +1);
     return randomNumber;
 }
-const cpuNumber = getRandomNumber();
+const cpuNumber = parseInt(getRandomNumber());
 console.log('Cpu Number: '+ cpuNumber );
 
 
-// prendo la value dal dom conl'event listener
+
+// prendo le value dal dom conl'event listener
 button.addEventListener('click' , function(){
-    userNumberValue = userNumberElement.value.trim();
+    // prendo il value di pari dispari
+    oddOrEven = oddOrEvenElement.value;
+    console.log(oddOrEven);
+
+    // prendo il numero scelto dall'utente
+    userNumberValue = parseInt(userNumberElement.value.trim());
     console.log(userNumberValue);
+
+    // faccio la somma
+    sum = userNumberValue + cpuNumber;
+    console.log(sum);
+
+
 })
 
 
-// faccio scegliere all'utente se vuole pari o dispari
 
-// faccio la somma
+
+
 
 // si dichiara il vincitore
 
