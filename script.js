@@ -2,6 +2,8 @@
 const userNumberElement = document.getElementById('user-number');
 const button = document.getElementById('button');
 const oddOrEvenElement = document.getElementById('odd-or-even');
+const winner = document.getElementById('winner');
+
 
 
 // genero un numero casuale da 1 a 5 (funzione)
@@ -18,7 +20,6 @@ console.log('Cpu Number: '+ cpuNumber );
 button.addEventListener('click' , function(){
     // prendo il value di pari dispari
     oddOrEven = oddOrEvenElement.value;
-    console.log(oddOrEven);
 
     // prendo il numero scelto dall'utente
     userNumberValue = parseInt(userNumberElement.value.trim());
@@ -28,7 +29,25 @@ button.addEventListener('click' , function(){
     sum = userNumberValue + cpuNumber;
     console.log(sum);
 
+    // si stabilisce se la somma è è pari o dispari (funzione)
+    function isEven(number){
+        let result = number % 2 === 0 ? true : false;
+        return result;
+    }
 
+    if (isEven(sum)) {
+        console.log('Pari')
+    }else {
+        console.log('Dispari')
+    }
+
+    if (oddOrEven === result){
+        winner = ('Sei il vincitore');
+    }else{
+        winner = ('Ha vinto il Computer');
+    }
+
+    
 })
 
 
@@ -44,11 +63,3 @@ button.addEventListener('click' , function(){
 
 
 
-// // si stabilisce se la somma è è pari o dispari (funzione)
-// let result = odd;
-// function isEven(number){
-//     if(number % 2 ===0){
-//         result = even;
-//     }
-//     return result;
-// }
