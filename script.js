@@ -2,7 +2,7 @@
 const userNumberElement = document.getElementById('user-number');
 const button = document.getElementById('button');
 const oddOrEvenElement = document.getElementById('odd-or-even');
-const winner = document.getElementById('winner');
+const winnerBet = document.getElementById('winner');
 
 
 
@@ -43,8 +43,9 @@ button.addEventListener('click' , function(){
 
     const rightChoice= isEven (sum) ? 'even' :'odd';
     const winner = oddOrEven === rightChoice ? 'user' : 'CPU';
+    console.log(winner);
     
-    winner.innerText = 'winner : ' + winner;
+    winnerBet.innerHTML = `Winner is : ${winner}`;
 })
 
 
