@@ -25,14 +25,14 @@ button.addEventListener('click' , function(){
     userNumberValue = parseInt(userNumberElement.value.trim());
     console.log(userNumberValue);
 
+
     // faccio la somma
-    sum = userNumberValue + cpuNumber;
+    const sum = userNumberValue + cpuNumber;
     console.log(sum);
 
     // si stabilisce se la somma è è pari o dispari (funzione)
     function isEven(number){
-        let result = number % 2 === 0 ? true : false;
-        return result;
+        return number % 2 === 0 ? true : false;
     }
 
     if (isEven(sum)) {
@@ -41,13 +41,10 @@ button.addEventListener('click' , function(){
         console.log('Dispari')
     }
 
-    if (oddOrEven === result){
-        winner = ('Sei il vincitore');
-    }else{
-        winner = ('Ha vinto il Computer');
-    }
-
+    const rightChoice= isEven (sum) ? 'even' :'odd';
+    const winner = oddOrEven === rightChoice ? 'user' : 'CPU';
     
+    winner.innerText = 'winner : ' + winner;
 })
 
 
@@ -55,7 +52,7 @@ button.addEventListener('click' , function(){
 
 
 
-// si dichiara il vincitore
+
 
 
 
